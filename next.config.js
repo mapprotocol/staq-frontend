@@ -15,10 +15,7 @@ const nextConfig = {
     'rc-pagination',
     'rc-picker'
   ],
-  i18n: {
-    locales: ['en-US', 'zh-CN'],
-    defaultLocale: 'en-US',
-  },
+ 
 };
 
 module.exports = nextConfig;
