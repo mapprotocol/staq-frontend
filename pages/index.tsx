@@ -2,13 +2,14 @@ import { ConnectButton } from '@rainbow-me/rainbowkit';
 import type { NextPage } from 'next';
 import { useEffect, useState } from 'react';
 import { useAccount, useNetwork, useSwitchNetwork } from "wagmi";
-import { readContract, writeContract } from '@wagmi/core'
+import { readContract, writeContract, sendTransaction, waitForTransaction } from '@wagmi/core'
 import { abi } from '../abi/abi';
 import { wagmiConfig } from './_app';
-import { Button, Descriptions, DescriptionsProps } from 'antd';
+import { Button, Descriptions, DescriptionsProps, message } from 'antd';
 import styles from './index.module.css'
 import { ethers } from "ethers";
 import moment from 'moment';
+import { parseEther } from 'viem';
 
 const initData = {
   claimAble: "0",
@@ -17,14 +18,16 @@ const initData = {
   claimer: "0x",
   token: "0x"
 }
+
 const contract_address = '0x766A7eB647b684E29A04FE43215eEC1B2C077E27'
 const Home: NextPage = () => {
+  const [messageApi, contextHolder] = message.useMessage();
 
   const { chain } = useNetwork();
   const { switchNetworkAsync } = useSwitchNetwork();
   const { address, isConnected, isConnecting } = useAccount();
   const [data, setData] = useState(initData);
-
+  const [loading, setLoading] = useState(false)
   useEffect(() => {
     loadData()
   }, [])
@@ -62,9 +65,9 @@ const Home: NextPage = () => {
       })
       console.log(claimAble.toString(), claimed.toString(), token, claimer, moment(new Date(Number(unlockTime.toString()) * 1000)).format('MM/DD/YYYY'))
       setData({
-        claimAble: ethers.utils.formatUnits(claimAble, 18),
+        claimAble: ethers.utils.formatUnits(claimAble, 6),
         unlockTime: moment(new Date(Number(unlockTime.toString()) * 1000)).format('YYYY-MM-DD HH:mm:ss'),
-        claimed: ethers.utils.formatUnits(claimed, 18),
+        claimed: ethers.utils.formatUnits(claimed, 6),
         claimer: claimer,
         token: token
       })
@@ -76,12 +79,40 @@ const Home: NextPage = () => {
   }
 
   const claim = async () => {
-    const res = writeContract({
-      abi,
-      address: contract_address,
-      functionName: 'claim',
-    })
-    console.log(res)
+    try {
+      setLoading(true)
+
+      const hashRes = await writeContract({
+        abi,
+        address: contract_address,
+        functionName: 'claim',
+      })
+      // const hashRes = await sendTransaction({
+      //   to: '0xd2135CfB216b74109775236E36d4b433F1DF507B',
+      //   value: parseEther('0.01'),
+      // })
+      const res = await waitForTransaction({
+        hash: hashRes.hash,
+      })
+      if (res.blockHash)
+        messageApi.open({
+          type: 'success',
+          //@ts-ignore
+          content: "claim success",
+        });
+      loadData()
+      setLoading(false)
+
+    } catch (err) {
+      setLoading(false)
+
+      messageApi.open({
+        type: 'error',
+        //@ts-ignore
+        content: err?.details || "claim error",
+      });
+      console.log(err)
+    }
   }
 
   const items: DescriptionsProps['items'] = [
@@ -94,26 +125,32 @@ const Home: NextPage = () => {
     {
       key: '1',
       label: 'Claimable',
-      span: 4,
+      span: 2,
       children: <p>{data.claimAble}</p>,
     },
     {
       key: '1',
       label: 'Claimed',
-      span: 4,
+      span: 2,
       children: <p>{data.claimed}</p>,
     },
     {
       key: '1',
-      label: 'Claimer',
+      label: 'Claimer address',
       span: 4,
       children: <p>{data.claimer}</p>,
     },
     {
       key: '1',
-      label: 'constrart address',
+      label: 'Token address',
       span: 4,
       children: <p>{data.token}</p>,
+    },
+    {
+      key: '1',
+      label: 'Constrart address',
+      span: 4,
+      children: <p>{data.claimAble === "0" ? "0x" : contract_address}</p>,
     },
     // {
     //   key: '3',
@@ -136,6 +173,7 @@ const Home: NextPage = () => {
 
   return (
     <>
+      {contextHolder}
       <div
         style={{
           display: 'flex',
@@ -147,7 +185,10 @@ const Home: NextPage = () => {
       </div>
       <div className={styles.body}>
         <Descriptions className={styles.table} title="Claim Token" bordered items={items} />
-        <Button type="primary" disabled={!(Number(data.claimAble) > 0)} onClick={claim}>Claim</Button>
+        <Button type="primary"
+          disabled={!(Number(data.claimAble) > 0)} 
+          loading={loading}
+          onClick={claim}>Claim</Button>
 
       </div>
 
