@@ -3,7 +3,7 @@ import type { NextPage } from 'next';
 import { useEffect, useState } from 'react';
 import { useAccount, useNetwork, useSwitchNetwork } from "wagmi";
 import { readContract, writeContract } from '@wagmi/core'
-import { abi } from './abi';
+import { abi } from '../abi/abi';
 import { wagmiConfig } from './_app';
 import { Button, Descriptions, DescriptionsProps } from 'antd';
 import styles from './index.module.css'
@@ -147,7 +147,7 @@ const Home: NextPage = () => {
       </div>
       <div className={styles.body}>
         <Descriptions className={styles.table} title="Claim Token" bordered items={items} />
-        <Button type="primary" onClick={claim}>Claim</Button>
+        <Button type="primary" disabled={!(Number(data.claimAble) > 0)} onClick={claim}>Claim</Button>
 
       </div>
 
