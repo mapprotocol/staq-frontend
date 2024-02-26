@@ -1,17 +1,17 @@
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import type { NextPage } from 'next';
 import { useEffect, useState } from 'react';
-import { useAccount, useNetwork, useSwitchNetwork } from "wagmi";
+import { useAccount, useNetwork, useSwitchNetwork} from "wagmi";
 import { useBalance } from 'wagmi'
 
-import { readContract, writeContract, sendTransaction, waitForTransaction } from '@wagmi/core'
+import { readContract, writeContract, sendTransaction, waitForTransaction} from '@wagmi/core'
 import { abi } from '../../../abi/abi';
 import { wagmiConfig } from '../_app';
 import { Button, Descriptions, DescriptionsProps, message } from 'antd';
 import styles from './index.module.css'
 import { ethers } from "ethers";
 import moment from 'moment';
-import { parseEther } from 'viem';
+import { parseEther, parseGwei } from 'viem';
 import Image from 'next/image'
 import { abbreviateMiddle } from '../../utils/string';
 import { contract_address } from '../../constract/address';
@@ -78,7 +78,8 @@ const Home: NextPage = () => {
                 abi,
                 address: contract_address,
                 functionName: 'convertToShares',
-                args: [parseEther('1')]
+                args: [parseEther('1')],
+                // gas:parseGwei("")
             })
             setRate(Number(ethers.utils.formatUnits(rate, 18)))
         }
@@ -86,6 +87,14 @@ const Home: NextPage = () => {
 
 
     const stakeFunc = async () => {
+        if(Number(inputValue) < 10){
+            messageApi.open({
+                type: 'error',
+                //@ts-ignore
+                content:  "At least 10 MAPO",
+            });
+            return
+        }
         if (address && isConnected) {
             try {
                 setLoading(true)
@@ -97,6 +106,7 @@ const Home: NextPage = () => {
                     args: [
                         parseEther(inputValue)
                     ],
+                    gas: parseGwei('0.00025'),
                     // overrides: {
                     //     gasLimit: 21000,
                     //   },

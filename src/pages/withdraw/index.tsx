@@ -11,7 +11,7 @@ import { Button, Collapse, CollapseProps, Descriptions, DescriptionsProps, messa
 import styles from './index.module.css'
 import { ethers } from "ethers";
 import moment from 'moment';
-import { parseEther } from 'viem';
+import { parseEther, parseGwei } from 'viem';
 import Image from 'next/image'
 import { abbreviateMiddle, zeroAddress } from '../../utils/string';
 import { ELECTIONS_ADDRESS, contract_address, validator_ADDRESS } from '../../constract/address';
@@ -72,12 +72,13 @@ const Home: NextPage = () => {
                 functionName: 'balanceOf',
                 args: [address]
             })
-            setStMAPO(Number(ethers.utils.formatUnits(stMAPO, 18)).toFixed(6))
+            setStMAPO(Number(ethers.utils.formatUnits(stMAPO, 18)).toFixed(6).slice(0, -1))
             let rate = await readContract({
                 abi,
                 address: contract_address,
                 functionName: 'convertToShares',
-                args: [parseEther('1')]
+                args: [parseEther('1')],
+
             })
             setRate(Number(ethers.utils.formatUnits(rate, 18)))
             let withdrawals = await readContract({
@@ -189,6 +190,7 @@ const Home: NextPage = () => {
                     abi,
                     address: contract_address,
                     functionName: 'withdraw',
+                    gas: parseGwei('0.00061'),
                 })
 
                 const res = await waitForTransaction({
@@ -256,6 +258,8 @@ const Home: NextPage = () => {
                         lesser,
                         greater
                     ],
+                    gas: parseGwei('0.00061'),
+
                 })
 
                 const res = await waitForTransaction({
@@ -304,7 +308,7 @@ const Home: NextPage = () => {
                         {"Request stMAPO withdrawal and claim MAPO"}
                     </div>
 
-                   {address && <div className={styles.tabs}>
+                    {address && <div className={styles.tabs}>
                         <div className={styles.tab}
                             onClick={() => {
                                 setActive("request")
@@ -558,11 +562,11 @@ const Home: NextPage = () => {
                                 <div className={styles.aggregatorRight}>
                                     <div className={styles.aggregatorTitle}>
                                         {"Hiveswap"}
-                                        <div 
-                                        onClick={()=>{
-                                            window.open('https://app.hiveswap.io/swap')
-                                        }}
-                                        className={styles.goto}>
+                                        <div
+                                            onClick={() => {
+                                                window.open('https://app.hiveswap.io/swap')
+                                            }}
+                                            className={styles.goto}>
                                             {"Go to Hiveswap"}
                                             <Image
                                                 width={12}
@@ -572,12 +576,12 @@ const Home: NextPage = () => {
                                                 alt="map" />
                                         </div>
                                     </div>
-                                        <div className={styles.aggregatorInfo}>
-                                            <div style={{
-                                                color:'#7A8AA0'
-                                            }}>Rate:</div>
-                                            <div>1 : 0.997</div>
-                                        </div>
+                                    <div className={styles.aggregatorInfo}>
+                                        <div style={{
+                                            color: '#7A8AA0'
+                                        }}>Rate:</div>
+                                        <div>1 : 0.997</div>
+                                    </div>
                                 </div>
 
                             </div>
