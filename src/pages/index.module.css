@@ -41,6 +41,7 @@
     padding: 12px 24px;
     background: #3F6DFF;
     left: calc(50% - 620px);
+    cursor: pointer;
 }
 
 .table {

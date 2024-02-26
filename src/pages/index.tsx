@@ -36,7 +36,7 @@ const Home: NextPage = () => {
         </div>
         <div onClick={() => {
 
-          router.push('/')
+          router.push('/stake')
 
         }} className={styles.enterButton}>
           {"Staking Now"}

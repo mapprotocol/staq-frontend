@@ -13,6 +13,9 @@ const Header = () => {
         router.push('/')
       }}>
         <Image
+          style={{
+            cursor: 'pointer'
+          }}
           height={32}
           width={98}
           src="/images/logo.png"
