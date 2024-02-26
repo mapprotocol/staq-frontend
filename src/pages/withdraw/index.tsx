@@ -304,7 +304,7 @@ const Home: NextPage = () => {
                         {"Request stMAPO withdrawal and claim MAPO"}
                     </div>
 
-                    <div className={styles.tabs}>
+                   {address && <div className={styles.tabs}>
                         <div className={styles.tab}
                             onClick={() => {
                                 setActive("request")
@@ -320,7 +320,7 @@ const Home: NextPage = () => {
                                 backgroundColor: active == "claim" ? '#3F6DFF' : '#fff',
                                 color: active == "claim" ? '#fff' : '#000',
                             }}>{"Claim"}</div>
-                    </div>
+                    </div>}
                     {address && <div className={styles.personal}>
                         <div className={styles.personalTitle}>
                             {'Personal Information'}
