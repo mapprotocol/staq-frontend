@@ -3,7 +3,6 @@ import '@rainbow-me/rainbowkit/styles.css';
 import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
 import { AntdRegistry } from '@ant-design/nextjs-registry';
-
 import {
   RainbowKitProvider,
   getDefaultWallets,
@@ -26,6 +25,8 @@ import {
   sepolia,
   zora,
 } from 'wagmi/chains';
+import Header from '../components/header';
+import Layout from './layout';
 
 
 const map: Chain = {
@@ -78,7 +79,7 @@ const { chains, publicClient, webSocketPublicClient } = configureChains(
   [
     // mainnet,
     // polygon,
-    map,
+    // map,
     map_testnet
   ],
   [publicProvider()]
@@ -120,7 +121,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <WagmiConfig config={wagmiConfig}>
       <RainbowKitProvider appInfo={demoAppInfo} chains={chains} locale={locale}>
-        <AntdRegistry><Component {...pageProps} /></AntdRegistry>
+        <AntdRegistry><Layout><Component {...pageProps} /></Layout></AntdRegistry>
       </RainbowKitProvider>
     </WagmiConfig>
   );

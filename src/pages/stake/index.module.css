@@ -1,0 +1,276 @@
+.body {
+    padding-left: calc(50% - 620px);
+    padding-right: calc(50% - 620px);
+    background: linear-gradient(90deg, #FAF7FF 1.48%, #F4FAFD 94.08%);
+    min-height: 100vh;
+}
+
+.table {
+    width: 100%;
+}
+
+.total {
+    padding-top: 48px;
+}
+
+.totalTitle {
+    color: #000;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 700;
+
+}
+
+.cards {
+    display: flex;
+    gap: 16px;
+    justify-content: space-between;
+    margin-top: 24px;
+}
+
+.totalCard {
+    border-radius: 12px;
+    border: 1px solid #E8ECFA;
+    padding: 24px;
+    flex-basis: 22%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+
+}
+
+.cardTitle {
+    color: #7A8AA0;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal
+}
+
+
+.cardValue {
+    color: #000;
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.stake {
+    display: flex;
+    flex-direction: column;
+    padding-top: 48px;
+    align-items: center;
+    justify-content: center;
+}
+
+.stakeTitle {
+
+    color: #000;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.stakeDesc {
+    color: #7A8AA0;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    margin-top: 12px;
+    margin-bottom: 24px;
+
+}
+
+.stakeCard {
+    border-radius: 24px;
+    background: #FFF;
+    padding: 24px;
+    box-sizing: border-box;
+    margin-bottom: 24px;
+    width: 496px;
+}
+
+.input {
+    border: none;
+    outline: none;
+    font-size: 14px;
+    margin-left: 12px;
+    width: 100%;
+
+}
+
+.inputOut {
+    display: flex;
+    padding: 0 24px;
+    /* justify-content: space-around; */
+    align-items: center;
+
+    height: 56px;
+    border-radius: 12px;
+    border: 1px solid #E8ECFA;
+    background: #FFF;
+    justify-content: space-between;
+}
+
+.inputLeft {
+    display: flex;
+    width: 80%;
+
+}
+
+.stakeInfo {
+    margin-top: 24px;
+}
+
+.connectButton {
+    margin-top: 24px;
+    font-size: 16px;
+    font-style: normal;
+    border-radius: 12px;
+    font-weight: 500;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 0;
+    background-color: #3F6DFF;
+    cursor: pointer;
+    transition: all 0.15s;
+
+}
+
+.connectButtonDisable {
+    margin-top: 24px;
+    font-size: 16px;
+    font-style: normal;
+    border-radius: 12px;
+    font-weight: 500;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 0;
+    background-color: #a2a5ae;
+}
+.connectButton:hover{
+    background-color: #2b5af3;
+
+}
+.infoItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 32px;
+}
+
+.max {
+    border-radius: 4px;
+    background: #E3EAFF;
+    color: #3F6DFF;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px;
+    user-select: none;
+    cursor: pointer;
+}
+
+.infoValue {
+
+    color: #000;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.infoTitle {
+
+    color: #7A8AA0;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+.personal {
+    box-sizing: border-box;
+    padding: 24px;
+    width: 496px;
+    background: linear-gradient(90deg, #F0E9FF 1.48%, #E1F2F9 94.08%), #FFF;
+    border-radius: 24px;
+    margin-bottom: 24px;
+}
+
+.personalTitle {
+    color: #000;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    display: flex;
+    justify-content: space-between;
+}
+
+.personalInfo {
+    margin-top: 24px;
+}
+
+.personalAddress {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 4px 12px;
+    border-radius: 8px;
+    color: #7A8AA0;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.personaInfolTitle {
+    color: #7A8AA0;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+}
+
+.personalValue {
+    color: #000;
+    text-align: right;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+}
+
+@media (max-width: 1288px) {
+    .body {
+        padding-left: 24px;
+        padding-right: 24px;
+
+    }
+}
+
+@media (max-width: 800px) {
+    .personal {
+
+        width: 100%;
+    }
+
+    .claim {
+        width: 100%;
+    }
+
+    .stakeCard {
+        width: 100%;
+    }
+}

@@ -1,0 +1,427 @@
+.body {
+    padding-left: calc(50% - 620px);
+    padding-right: calc(50% - 620px);
+    background: linear-gradient(90deg, #FAF7FF 1.48%, #F4FAFD 94.08%);
+    min-height: 100vh;
+}
+
+.table {
+    width: 100%;
+}
+
+
+.withdraw {
+    display: flex;
+    flex-direction: column;
+    padding-top: 48px;
+    align-items: center;
+    justify-content: center;
+}
+
+.withdrawTitle {
+
+    color: #000;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.withdrawDesc {
+    color: #7A8AA0;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    margin-top: 12px;
+    margin-bottom: 24px;
+
+}
+
+.tabs {
+    background: #fff;
+    width: 222px;
+    height: 40px;
+    border-radius: 24px;
+    display: flex;
+}
+
+.tab {
+    width: 111px;
+    height: 40px;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+    font-size: 14px;
+    font-style: normal;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.stakeCard {
+    border-radius: 24px;
+    background: #FFF;
+    padding: 24px;
+    box-sizing: border-box;
+    margin-bottom: 24px;
+    width: 496px;
+}
+
+.withdrawTab {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input {
+    border: none;
+    outline: none;
+    font-size: 14px;
+    margin-left: 12px;
+    width: 100%;
+
+}
+
+.inputOut {
+    display: flex;
+    padding: 0 24px;
+    margin-top: 24px;
+    /* justify-content: space-around; */
+    align-items: center;
+
+    height: 56px;
+    border-radius: 12px;
+    border: 1px solid #E8ECFA;
+    background: #FFF;
+    justify-content: space-between;
+}
+
+.output {
+    display: flex;
+    padding: 0 24px;
+    align-items: center;
+    margin-top: 24px;
+    height: 56px;
+    border-radius: 12px;
+    background: #FAFAFA;
+    justify-content: space-between;
+}
+
+.inputLeft {
+    display: flex;
+    align-items: center;
+    width: 70%;
+
+}
+
+.outputTitle {
+    color: #000;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    margin-left: 12px;
+    line-height: normal;
+}
+
+.outputValue {
+    color: #000;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-wrap: nowrap;
+}
+
+.stakeInfo {
+    margin-top: 24px;
+}
+
+.connectButton {
+    margin-top: 24px;
+    font-size: 16px;
+    font-style: normal;
+    border-radius: 12px;
+    font-weight: 500;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 0;
+    background-color: #3F6DFF;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.connectButtonDisable {
+    margin-top: 24px;
+    font-size: 16px;
+    font-style: normal;
+    border-radius: 12px;
+    font-weight: 500;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 0;
+    background-color: #a2a5ae;
+}
+
+.connectButton:hover {
+    background-color: #2b5af3;
+
+}
+
+.infoItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 36px;
+}
+
+.max {
+    border-radius: 4px;
+    background: #E3EAFF;
+    color: #3F6DFF;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px;
+    user-select: none;
+    cursor: pointer;
+}
+
+.infoValue {
+    color: #000;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.infoTitle {
+
+    color: #7A8AA0;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+.personal {
+    box-sizing: border-box;
+    padding: 24px;
+    width: 496px;
+    background: linear-gradient(90deg, #F0E9FF 1.48%, #E1F2F9 94.08%), #FFF;
+    border-radius: 24px;
+    margin-bottom: 24px;
+    margin-top: 24px;
+}
+
+.personalTitle {
+    color: #000;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    display: flex;
+    justify-content: space-between;
+}
+
+.personalInfo {
+    margin-top: 24px;
+}
+
+.personalAddress {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    padding: 4px 12px;
+    border-radius: 8px;
+    color: #7A8AA0;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.personaInfolTitle {
+    color: #7A8AA0;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+}
+
+.personalValue {
+    color: #000;
+    text-align: right;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    display: flex;
+    gap: 24px;
+}
+
+.claimstatus {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+}
+
+.claim {
+    background-color: #fff;
+    width: 496px;
+    padding: 24px;
+    border-radius: 24px;
+    box-sizing: border-box;
+}
+
+
+
+.claimTabs {
+
+    display: flex;
+    cursor: pointer;
+    gap: 12px;
+}
+
+.claimTab {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    padding: 4px 6px;
+    background-color: #FAFAFA;
+    color: #000;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+
+}
+
+.collapse {
+    margin-top: 24px;
+
+}
+
+.collapseHeader {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    color: #7A8AA0;
+
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    justify-content: space-around;
+    margin-bottom: 12px;
+}
+
+
+.collapseItemHeader {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    color: #7A8AA0;
+
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    justify-content: space-around;
+    margin-bottom: 12px;
+
+}
+
+.collapseHeader div {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.collapseItemHeader div {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.aggregator {
+    margin-top: 24px;
+    border-radius: 12px;
+    background: #FAFAFA;
+    width: 446px;
+    box-sizing: border-box;
+    height: 108px;
+    display: flex;
+    flex-shrink: 0;
+    padding: 24px;
+    justify-content: space-between;
+
+}
+
+.aggregatorTitle {
+    color: #000;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    display: flex;
+    justify-content: space-between;
+    width: 346px;
+    padding-bottom: 12px;
+    border-bottom: solid 1px #e9e6e6;
+}
+
+.goto {
+    color: #3F6DFF;
+    text-align: right;
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.aggregatorInfo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 12px;
+    font-size: 12px;
+}
+@media (max-width: 1288px) {
+    .body {
+        padding-left: 24px;
+        padding-right: 24px;
+
+    }
+
+}
+
+@media (max-width: 800px) {
+    .personal {
+
+        width: 100%;
+    }
+
+    .claim {
+        width: 100%;
+    }
+
+    .stakeCard {
+        width: 100%;
+    }
+}
