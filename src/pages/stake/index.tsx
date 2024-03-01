@@ -15,6 +15,7 @@ import { parseEther, parseGwei } from 'viem';
 import Image from 'next/image'
 import { abbreviateMiddle } from '../../utils/string';
 import { contract_address } from '../../constract/address';
+import axios from 'axios';
 
 const initData = {
     claimAble: "0",
@@ -44,7 +45,7 @@ const stakeCards = [
 ]
 
 
-const apr = 31104000000 / (new Date().getTime() - 1708337871000)
+
 
 
 const Home: NextPage = () => {
@@ -57,7 +58,7 @@ const Home: NextPage = () => {
     const [inputValue, setInputValue] = useState("")
     const [rate, setRate] = useState(1)
     const [stMAPO, setStMAPO] = useState("")
-
+    const [apr , setApr] = useState(0)
     const result = useBalance({ address })
     useEffect(() => {
         getData()
@@ -83,6 +84,22 @@ const Home: NextPage = () => {
             })
             setRate(Number(ethers.utils.formatUnits(rate, 18)))
         }
+
+        const url = "http://43.156.23.129:7111/queryPrice";
+      
+
+        axios.get(url)
+            .then(response => {
+            setApr(Number((response.data.data.list[0].price - response.data.data.list[1].price )/ response.data.data.list[1].price *730))
+              
+                // .setState({
+                //   data: response.data,
+                // });
+            }).catch(error => {
+                console.error("Error fetching data: ", error);
+                alert(error);
+            });
+
     }
 
 
@@ -178,7 +195,6 @@ const Home: NextPage = () => {
                     </div>
                 </div> */}
 
-
                 <div className={styles.stake}>
                     <div className={styles.stakeTitle}>
                         {"Stake MAPO"}
@@ -202,7 +218,7 @@ const Home: NextPage = () => {
                             </div>
                             <div className={styles.infoItem}>
                                 <div className={styles.personaInfolTitle}>{"Lido APR"}</div>
-                                <div className={styles.personalValue}>{((1 / rate - 1) * apr * 100).toFixed(2) + "%"}</div>
+                                <div className={styles.personalValue}>{(apr).toFixed(2) + "%"}</div>
                             </div>
                         </div>
                     </div>}
