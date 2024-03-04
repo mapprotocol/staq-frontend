@@ -8,6 +8,44 @@
     gap: 24px;
 }
 
+.datas {
+    position: absolute;
+    bottom: calc(100vw* 0.06);
+    left: 0;
+    z-index: 99;
+    padding-left: calc(50% - 620px);
+    padding-right: calc(50% - 620px);
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dataTitle {
+    color: #000;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+}
+
+.dataDesc {
+    color: #000;
+    margin-top: 24px;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+
+}
+
 .bg {
     width: 100%;
     position: relative;
@@ -48,6 +86,146 @@
     width: 100%;
 }
 
+.bodyItem {
+    height: 534px;
+    padding-left: calc(50% - 620px);
+    padding-right: calc(50% - 620px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.bodyTitle {
+
+    color: #000;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.left {
+    width: 700px;
+}
+
+.right {
+    position: relative;
+    width: 380.302px;
+    height: 375px;
+    flex-shrink: 0;
+}
+
+.bodyDesc {
+    color: #000;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25.2px;
+
+}
+
+.user {
+    height: 492px;
+    padding-left: calc(50% - 620px);
+    padding-right: calc(50% - 620px);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.userTitle {
+    color: #000;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    padding-top: 102px;
+}
+
+.steps {
+    margin-top: 48px;
+    display: flex;
+    align-items: center;
+
+    flex-direction: row;
+    gap: 24px;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stepTitle {
+    color: #000;
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-top: 24px;
+
+}
+
+.stepImage {
+    position: relative;
+    width: 84px;
+    height: 84px;
+    flex-shrink: 0;
+}
+
+.stepDesc {
+    margin-top: 12px;
+    color: #656565;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+}
+
+.defi {
+    height: 492px;
+    padding-left: calc(50% - 620px);
+    padding-right: calc(50% - 620px);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 102px;
+}
+
+.defiTitle {
+    color: #000;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    
+}
+.defiDesc{
+    margin-top: 12px;
+    color: #59595A;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+}
+.cards{
+    display: flex;
+    gap: 36px;
+    margin-top: 48px;
+}
+.cardImage{
+    width: 382.845px;
+    height: 140px;
+    flex-shrink: 0;
+    position: relative;
+}
+.card{
+   
+}
 @media (max-width: 1288px) {
     .body {
         padding-left: 24px;
