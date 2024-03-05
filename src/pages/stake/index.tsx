@@ -218,7 +218,7 @@ const Home: NextPage = () => {
                             </div>
                             <div className={styles.infoItem}>
                                 <div className={styles.personaInfolTitle}>{"Lido APR"}</div>
-                                <div className={styles.personalValue}>{(apr).toFixed(2) + "%"}</div>
+                                <div className={styles.personalValue}>{(apr*100).toFixed(2) + "%"}</div>
                             </div>
                         </div>
                     </div>}
