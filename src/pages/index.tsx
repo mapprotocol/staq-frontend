@@ -36,13 +36,13 @@ const Home: NextPage = () => {
         </div>
         <div onClick={() => {
 
-          router.push('/stake')
+          // router.push('/stake')
 
         }} className={styles.enterButton}>
           {"Staking Now"}
         </div>
 
-        <div className={styles.datas}>
+        {/* <div className={styles.datas}>
           <div className={styles.data}>
             <div className={styles.dataTitle}>
               {'Total Staked Tokens'}
@@ -75,15 +75,15 @@ const Home: NextPage = () => {
               {'15'}
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
       <div className={styles.bodyItem}>
         <div className={styles.left}>
           <div className={styles.bodyTitle}>
-            {"staQ解决什么问题？"}
+            {"What StaQ solves？"}
           </div>
           <div className={styles.bodyDesc}>
-            {"随着比特币生态的蓬勃发展，用户质押进比特币二层主网节点的代币，虽可享受收益，但受主网的安全机制限制，提出代币一般需要等待很久的时间，让用户流动性需求受阻。"}
+            {"As the Bitcoin ecosystem flourishes, users could stake tokens in Bitcoin L2s and enjoy profits. However, the mainnet usually put restrictions for users to reap immediate rewards.Users need to sit through long waiting time which has significantly hindered users' liquidity needs."}
           </div>
         </div>
         <div className={styles.right}>
@@ -111,17 +111,17 @@ const Home: NextPage = () => {
         </div>
         <div className={styles.left}>
           <div className={styles.bodyTitle}>
-            {"StaQ如何解决？"}
+            {"How StaQ solves it？"}
           </div>
           <div className={styles.bodyDesc}>
-            {"StaQ在各比特币Layer2搭建主网节点，用户只需将自己的主网代币，委托质押给StaQ的节点，StaQ便会1:1给到用户一个映射代币，该映射代币和主网代币在defi中保持约1：1的兑换比例，并且用户可以自动获得利息收入。"}
+            {"StaQ operates mainnet nodes on various Bitcoin L2s. Users only need to delegate their mainnet tokens for staking to StaQ's nodes, and StaQ will give users a mapped token on a 1:1 basis. This mapped token maintains a roughly 1:1 exchange ratio with the mainnet token in DeFi, and users can automatically earn interest income."}
           </div>
         </div>
       </div>
 
       <div className={styles.user}>
 
-        <div className={styles.userTitle}>{"用户如何操作"}</div>
+        <div className={styles.userTitle}>{"How to participate"}</div>
         <div className={styles.steps}>
 
           <div className={styles.step}>
@@ -133,7 +133,7 @@ const Home: NextPage = () => {
               src="/images/step1.png"
               alt="map" /></div>
             <div className={styles.stepTitle}>{"STEP 1"}</div>
-            <div className={styles.stepDesc}>{"用户委托质押进StaQ在比特币L2主网节点"}</div>
+            <div className={styles.stepDesc}>{"Delegate tokens for staking in StaQ's Bitcoin L2 mainnet nodes."}</div>
 
           </div>
           <div className={styles.step}>
@@ -145,7 +145,7 @@ const Home: NextPage = () => {
               src="/images/step2.png"
               alt="map" /></div>
             <div className={styles.stepTitle}>{"STEP 2"}</div>
-            <div className={styles.stepDesc}>{"收到ST Tokens 以及奖励"}</div>
+            <div className={styles.stepDesc}>{"Receive $STAQ and staking rewards."}</div>
 
           </div>
           <div className={styles.step}>
@@ -157,7 +157,7 @@ const Home: NextPage = () => {
               src="/images/step3.png"
               alt="map" /></div>
             <div className={styles.stepTitle}>{"STEP 3"}</div>
-            <div className={styles.stepDesc}>{"将ST Tokens用到各种defi中享受更多的收益"}</div>
+            <div className={styles.stepDesc}>{"Use $STAQ in various DeFi to enjoy more profits."}</div>
 
           </div>
 
@@ -171,10 +171,10 @@ const Home: NextPage = () => {
         }}>
         <div className={styles.left}>
           <div className={styles.bodyTitle}>
-            {"StaQ部署于繁荣的比特币L2网络"}
+            {"Deployed in the thriving Bitcoin L2 network"}
           </div>
           <div className={styles.bodyDesc}>
-            {"包括MAP Protocol、Merlin、BEVM、B Square 等，这意味着StaQ是服务所有比特币生态二层的质押流动性提供商。"}
+            {"StaQ is deployed on various thriving Bitcoin L2s, ncluding MAP Protocol Merlin, BEVM, B Square and more, thus serving as a liquidity provider for staking across all L2s in the Bitcoin ecosystem."}
           </div>
         </div>
         <div className={styles.right}>
@@ -201,20 +201,20 @@ const Home: NextPage = () => {
         </div>
         <div className={styles.left}>
           <div className={styles.bodyTitle}>
-            {"StaQ 通过 MAP Protocol 进行流动性互通"}
+            {"Facilitates liquidity interchange through MAP Protocol"}
           </div>
           <div className={styles.bodyDesc}>
-            {"不同主网的Stake Tokens无法互相拥有流动性，StaQ通过比特币二层互操作性入口MAP Protocol，让各个比特币L2主网的staking tokens，实现流动性互换。"}
+            {"Staking tokens from different mainnets cannot provide mutual liquidity. StaQ, powered by MAP Protocol – the interoperable gateway of Bitcoin L2s, makes it possible for staking tokens from various Bitcoin L2 mainnets to achieve liquidity exchange."}
           </div>
         </div>
       </div>
 
       <div className={styles.defi}>
         <div className={styles.defiTitle}>
-          {"哪些defi支持StaQ？"}
+          {"StaQ with DeFi"}
         </div>
         <div className={styles.defiDesc}>
-          {"StaQ的stake token被众多比特币L2的defi支持流动性及收益奖励，并在不断增加。"}
+          {"Staking tokens on StaQ are supported by numerous Bitcoin L2 DeFi services for liquidity and profit rewards, and the list is growing."}
         </div>
 
 
@@ -255,14 +255,47 @@ const Home: NextPage = () => {
         </div>
       </div>
 
-      {/* <div className={styles.audit}>
+      <div className={styles.audit}>
         <div className={styles.auditTitle}>
-          {"StaQ审计报告"}
+          {"Audit"}
         </div>
-        <div>
 
+        <div className={styles.auditBody}>
+          <div className={styles.auditLeft}>
+            <div className={styles.metaturst}>
+              <Image
+                fill
+                style={{
+                  objectFit: "contain",
+                }}
+                src="/images/audit1.png"
+                alt="map" />
+            </div>
+            <div className={styles.auditLine}></div>
+            
+            <div className={styles.auditLeftTitle}>
+              {"Stake LiQuid on Bitcoin | Apr 2023"}
+            </div>
+            <div className={styles.auditLeftDesc}>
+              {"METATRUST Audit Report"}
+            </div>
+            <div className={styles.auditButton}>
+              {"See Report"}
+            </div>
+          </div>
+          <div className={styles.auditRight}>
+            <div className={styles.auditImage}>
+              <Image
+                fill
+                style={{
+                  objectFit: "contain",
+                }}
+                src="/images/5.png"
+                alt="map" />
+            </div>
+          </div>
         </div>
-      </div> */}
+      </div>
     </>
   );
 };

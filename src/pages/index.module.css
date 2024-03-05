@@ -186,7 +186,7 @@
 }
 
 .defi {
-    height: 492px;
+    height: 402px;
     padding-left: calc(50% - 620px);
     padding-right: calc(50% - 620px);
     display: flex;
@@ -201,9 +201,10 @@
     font-style: normal;
     font-weight: 600;
     line-height: normal;
-    
+
 }
-.defiDesc{
+
+.defiDesc {
     margin-top: 12px;
     color: #59595A;
     font-size: 16px;
@@ -212,20 +213,112 @@
     line-height: normal;
 
 }
-.cards{
+
+.cards {
     display: flex;
     gap: 36px;
     margin-top: 48px;
 }
-.cardImage{
+
+.cardImage {
     width: 382.845px;
     height: 140px;
     flex-shrink: 0;
     position: relative;
 }
-.card{
-   
+
+.audit {
+    padding-left: calc(50% - 620px);
+    padding-right: calc(50% - 620px);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 96px;
 }
+
+.auditTitle {
+
+    color: #000;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.auditBody {
+    display: flex;
+    height: 300px;
+    border-radius: 16px;
+    background: linear-gradient(90deg, #EAF3FF 0%, #F8F4FF 100%), #F7F7F7;
+    width: 100%;
+    margin-top: 48px;
+    padding: 0 48px;
+    box-sizing: border-box;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.auditImage {
+    width: 401.503px;
+    height: 380px;
+    position: relative;
+
+}
+
+.metaturst {
+    width: 219.354px;
+    height: 30px;
+    position: relative;
+
+}
+
+.auditLine {
+    width: 286px;
+    margin: 24px 0;
+    height: 1px;
+    background-color: #D6DCE6;
+}
+
+.auditLeftTitle {
+    color: #7A8AA0;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.auditLeftDesc {
+    color: #000;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-top: 12px;
+}
+
+.auditButton {
+    margin-top: 24px;
+    padding: 12px 24px;
+    color: #FFF;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border-radius: 4px;
+    background: #3F6DFF;
+    cursor: pointer;
+    position: absolute;
+    bottom: 48px;
+}
+
+.auditLeft {
+    position: relative;
+    padding-top: 48px;
+    display: flex;
+    flex-direction: column;
+}
+
 @media (max-width: 1288px) {
     .body {
         padding-left: 24px;
