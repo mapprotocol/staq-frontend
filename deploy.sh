@@ -1,5 +1,5 @@
 #!/bin/bash
 git pull
-npm run build
+yarn build
 pm2 delete 0
-pm2 start "npm run start"
+pm2 start "yarn start"
