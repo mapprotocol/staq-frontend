@@ -255,7 +255,7 @@ const Home: NextPage = () => {
         </div>
       </div>
 
-      <div className={styles.audit}>
+      {/* <div className={styles.audit}>
         <div className={styles.auditTitle}>
           {"Audit"}
         </div>
@@ -293,6 +293,50 @@ const Home: NextPage = () => {
                 src="/images/5.png"
                 alt="map" />
             </div>
+          </div>
+        </div>
+      </div> */}
+
+      <div className={styles.footer}>
+
+        <div className={styles.footerLeft}>
+          <Image
+            style={{
+              cursor: 'pointer'
+            }}
+            height={35}
+            width={107.5}
+            src="/images/logo.png"
+            alt="map" />
+        </div>
+
+        <div className={styles.footerRight}>
+          <div className={styles.footerItem}>
+            <div className={styles.footerItemTitle}>{"Network"}</div>
+            <div className={styles.footerItemDesc}>{"Map Protocol"}</div>
+            <div className={styles.footerItemDesc}>{"Merlin Chain"}<div className={styles.coming}>{"coming soon"}</div></div>
+            <div className={styles.footerItemDesc}>{"Conflux"}<div className={styles.coming}>{"coming soon"}</div></div>
+            <div className={styles.footerItemDesc}>{"B² Network"}<div className={styles.coming}>{"coming soon"}</div></div>
+          </div>
+          <div className={styles.footerItem}>
+            <div className={styles.footerItemTitle}>{"Node"}</div>
+            <div className={styles.footerItemDesc} onClick={()=>{
+              window.open("https://www.maposcan.io/validators/0x2ef75b32c26bc92977998c6d19e527e49fad0d9b")
+            }}>{"StaQ Map Node"}</div>
+          </div>
+          <div className={styles.footerItem}>
+            <div className={styles.footerItemTitle}>{"Github"}</div>
+            <div className={styles.footerItemDesc}>{"Document"}</div>
+          </div>
+          <div className={styles.footerItem}>
+            <div className={styles.footerItemTitle}>{"Media"}</div>
+            <div className={styles.footerItemDesc}>{"Telegram"}</div>
+            <div className={styles.footerItemDesc}>{"Twitter"}</div>
+            <div className={styles.footerItemDesc}>{"Discord"}</div>
+
+          </div>
+          <div className={styles.footerButton}>
+            {"dApp"}
           </div>
         </div>
       </div>

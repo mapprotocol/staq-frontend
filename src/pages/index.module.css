@@ -319,6 +319,72 @@
     flex-direction: column;
 }
 
+.footer {
+    display: flex;
+    padding-left: calc(50% - 620px);
+    padding-right: calc(50% - 620px);
+    justify-content: space-between;
+    padding-bottom: 96px;
+}
+
+.footerLeft {
+    width: 107.556px;
+    height: 35px;
+    position: relative;
+
+}
+
+.footerRight {
+    gap: 72px;
+    display: flex;
+}
+
+.footerItemTitle {
+    color: #000;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.footerButton {
+    margin-top: 24px;
+    padding: 8px 24px;
+    color: #FFF;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border-radius: 4px;
+    background: #3F6DFF;
+    cursor: pointer;
+    height: 20px;
+}
+
+.footerItemDesc {
+    margin-top: 12px;
+    color: #000;
+    cursor: pointer;
+display: flex;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.coming {
+    padding: 4px 12px;
+    color: #000;
+    font-size: 10px;
+    margin-left: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border-radius: 8px;
+    background: #F2F2F2;
+}
+
 @media (max-width: 1288px) {
     .body {
         padding-left: 24px;
