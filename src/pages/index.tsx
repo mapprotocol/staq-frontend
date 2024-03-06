@@ -313,7 +313,12 @@ const Home: NextPage = () => {
         <div className={styles.footerRight}>
           <div className={styles.footerItem}>
             <div className={styles.footerItemTitle}>{"Network"}</div>
-            <div className={styles.footerItemDesc}>{"Map Protocol"}</div>
+            <div className={styles.footerItemDesc}
+            onClick={() => {
+
+              router.push('/')
+    
+            }}>{"Map Protocol"}</div>
             <div className={styles.footerItemDesc}>{"Merlin Chain"}<div className={styles.coming}>{"coming soon"}</div></div>
             <div className={styles.footerItemDesc}>{"Conflux"}<div className={styles.coming}>{"coming soon"}</div></div>
             <div className={styles.footerItemDesc}>{"B² Network"}<div className={styles.coming}>{"coming soon"}</div></div>
@@ -326,7 +331,9 @@ const Home: NextPage = () => {
           </div>
           <div className={styles.footerItem}>
             <div className={styles.footerItemTitle}>{"Github"}</div>
-            <div className={styles.footerItemDesc}>{"Document"}</div>
+            <div className={styles.footerItemDesc} onClick={()=>{
+              window.open("https://docs.bitstaq.io/introduction/what-is-staq")
+            }}>{"Document"}</div>
           </div>
           <div className={styles.footerItem}>
             <div className={styles.footerItemTitle}>{"Media"}</div>
