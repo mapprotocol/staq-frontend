@@ -1,4 +1,7 @@
-export const contract_address = '0xdaee9b7410976fa31ed566674a21c5574c3318ff'
+// export const contract_address = '0xdaee9b7410976fa31ed566674a21c5574c3318ff'
+export const contract_address = '0x9bD1E0a3A727D0d4F4e9A6d59022E071DDc79924'
+
 export const ELECTIONS_ADDRESS = '0x000000000000000000000000000000000000d013'
 export const LOCKED_GOLDADDRESS = '0x000000000000000000000000000000000000d011'
-export const validator_ADDRESS = "0x2CFEB8D07ac818EFBdff18Efc7F50b7fDe19d354"
+// export const validator_ADDRESS = "0x2CFEB8D07ac818EFBdff18Efc7F50b7fDe19d354"
+export const validator_ADDRESS = "0x2Ef75B32C26bC92977998C6D19e527E49fAD0D9B"

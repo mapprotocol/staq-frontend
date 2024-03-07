@@ -1,10 +1,10 @@
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import type { NextPage } from 'next';
 import { useEffect, useState } from 'react';
-import { useAccount, useNetwork, useSwitchNetwork} from "wagmi";
+import { useAccount, useNetwork, useSwitchNetwork } from "wagmi";
 import { useBalance } from 'wagmi'
 
-import { readContract, writeContract, sendTransaction, waitForTransaction} from '@wagmi/core'
+import { readContract, writeContract, sendTransaction, waitForTransaction } from '@wagmi/core'
 import { abi } from '../../../abi/abi';
 import { wagmiConfig } from '../_app';
 import { Button, Descriptions, DescriptionsProps, message } from 'antd';
@@ -57,8 +57,8 @@ const Home: NextPage = () => {
     const [loading, setLoading] = useState(false)
     const [inputValue, setInputValue] = useState("")
     const [rate, setRate] = useState(1)
-    const [stMAPO, setStMAPO] = useState("")
-    const [apr , setApr] = useState(0)
+    const [stMAPO, setStMAPO] = useState("0")
+    const [apr, setApr] = useState(0)
     const result = useBalance({ address })
     useEffect(() => {
         getData()
@@ -82,16 +82,18 @@ const Home: NextPage = () => {
                 args: [parseEther('1')],
                 // gas:parseGwei("")
             })
+            console.log(rate, 11111)
+
             setRate(Number(ethers.utils.formatUnits(rate, 18)))
         }
 
-        const url = "http://43.156.23.129:7111/queryPrice";
-      
+        const url = "https://staq-backend.chainservice.io/queryPrice";
+
 
         axios.get(url)
             .then(response => {
-            setApr(Number((response.data.data.list[0].price - response.data.data.list[1].price )/ response.data.data.list[1].price *730))
-              
+                const x = 31104000000 / (new Date(response.data.data.list[0].createdAt).getTime() - new Date(response.data.data.list[1].createdAt).getTime())
+                setApr(Number((response.data.data.list[0].price - response.data.data.list[1].price) / response.data.data.list[1].price * x))
                 // .setState({
                 //   data: response.data,
                 // });
@@ -104,11 +106,11 @@ const Home: NextPage = () => {
 
 
     const stakeFunc = async () => {
-        if(Number(inputValue) < 10){
+        if (Number(inputValue) < 10) {
             messageApi.open({
                 type: 'error',
                 //@ts-ignore
-                content:  "At least 10 MAPO",
+                content: "At least 10 MAPO",
             });
             return
         }
@@ -217,8 +219,8 @@ const Home: NextPage = () => {
                                 <div className={styles.personalValue}>{stMAPO + " stMAPO"}</div>
                             </div>
                             <div className={styles.infoItem}>
-                                <div className={styles.personaInfolTitle}>{"Lido APR"}</div>
-                                <div className={styles.personalValue}>{(apr*100).toFixed(2) + "%"}</div>
+                                <div className={styles.personaInfolTitle}>{"APR"}</div>
+                                <div className={styles.personalValue}>{(apr * 100).toFixed(2) + "%"}</div>
                             </div>
                         </div>
                     </div>}

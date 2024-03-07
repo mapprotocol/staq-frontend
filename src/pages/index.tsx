@@ -35,9 +35,7 @@ const Home: NextPage = () => {
           {"Liquidity for Staked Tokens in Bitcoin Layer2s Ecosystem"}
         </div>
         <div onClick={() => {
-
-          // router.push('/stake')
-
+          router.push('/stake')
         }} className={styles.enterButton}>
           {"Staking Now"}
         </div>
@@ -125,13 +123,15 @@ const Home: NextPage = () => {
         <div className={styles.steps}>
 
           <div className={styles.step}>
-            <div className={styles.stepImage}><Image
+            <div className={styles.stepImage}>
+              <Image
               fill
               style={{
                 objectFit: "contain",
               }}
               src="/images/step1.png"
-              alt="map" /></div>
+              alt="map" />
+              </div>
             <div className={styles.stepTitle}>{"STEP 1"}</div>
             <div className={styles.stepDesc}>{"Delegate tokens for staking in StaQ's Bitcoin L2 mainnet nodes."}</div>
 
@@ -314,35 +314,44 @@ const Home: NextPage = () => {
           <div className={styles.footerItem}>
             <div className={styles.footerItemTitle}>{"Network"}</div>
             <div className={styles.footerItemDesc}
-            onClick={() => {
+              onClick={() => {
 
-              router.push('/')
-    
-            }}>{"Map Protocol"}</div>
+                router.push('/stake')
+
+              }}>{"Map Protocol"}</div>
             <div className={styles.footerItemDesc}>{"Merlin Chain"}<div className={styles.coming}>{"coming soon"}</div></div>
             <div className={styles.footerItemDesc}>{"Conflux"}<div className={styles.coming}>{"coming soon"}</div></div>
             <div className={styles.footerItemDesc}>{"B² Network"}<div className={styles.coming}>{"coming soon"}</div></div>
           </div>
           <div className={styles.footerItem}>
             <div className={styles.footerItemTitle}>{"Node"}</div>
-            <div className={styles.footerItemDesc} onClick={()=>{
+            <div className={styles.footerItemDesc} onClick={() => {
               window.open("https://www.maposcan.io/validators/0x2ef75b32c26bc92977998c6d19e527e49fad0d9b")
             }}>{"StaQ Map Node"}</div>
           </div>
           <div className={styles.footerItem}>
             <div className={styles.footerItemTitle}>{"Github"}</div>
-            <div className={styles.footerItemDesc} onClick={()=>{
+            <div className={styles.footerItemDesc} onClick={() => {
               window.open("https://docs.bitstaq.io/introduction/what-is-staq")
             }}>{"Document"}</div>
           </div>
           <div className={styles.footerItem}>
             <div className={styles.footerItemTitle}>{"Media"}</div>
-            <div className={styles.footerItemDesc}>{"Telegram"}</div>
-            <div className={styles.footerItemDesc}>{"Twitter"}</div>
-            <div className={styles.footerItemDesc}>{"Discord"}</div>
+            {/* <div className={styles.footerItemDesc}>{"Telegram"}</div> */}
+            <div className={styles.footerItemDesc} onClick={() => {
+
+              window.open("https://twitter.com/Bitstaq_io")
+
+          }}>{"Twitter"}</div>
+            {/* <div className={styles.footerItemDesc}>{"Discord"}</div> */}
 
           </div>
-          <div className={styles.footerButton}>
+          <div className={styles.footerButton}
+            onClick={() => {
+
+              router.push('/stake')
+
+            }} >
             {"dApp"}
           </div>
         </div>

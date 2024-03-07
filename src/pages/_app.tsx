@@ -31,8 +31,8 @@ import Layout from './layout';
 
 const map: Chain = {
   id: 22776,
-  name: 'MAP Relay Chain',
-  network: 'MAP Relay Chain',
+  name: 'MAP Protocol',
+  network: 'MAP Protocol',
   nativeCurrency: {
     decimals: 18,
     name: 'MAPO',
@@ -46,9 +46,7 @@ const map: Chain = {
     default: { name: 'MAP Scan', url: 'https://maposcan.io/' },
   },
   contracts: {
-    multicall3: {
-      address: '0xcA11bde05977b3631167028862bE2a173976CA11',
-    },
+  
   },
   testnet: false,
 };
@@ -79,8 +77,8 @@ const { chains, publicClient, webSocketPublicClient } = configureChains(
   [
     // mainnet,
     // polygon,
-    // map,
-    map_testnet
+    map,
+    // map_testnet
   ],
   [publicProvider()]
 );

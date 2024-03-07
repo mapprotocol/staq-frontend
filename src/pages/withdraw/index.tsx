@@ -146,7 +146,7 @@ const Home: NextPage = () => {
     const getCompeletedList = () => {
         const _compeletedListList: CollapseProps['items'] = []
 
-        const url = "http://43.156.23.129:7111/queryWithdraws";
+        const url = " https://staq-backend.chainservice.io/queryWithdraws";
         const params = {
             from: address,
             page: "1",
@@ -443,7 +443,7 @@ const Home: NextPage = () => {
                                         width: '150px',
                                         backgroundColor: withdrawTab == "lido" ? '#3F6DFF' : '#FAFAFA',
                                         color: withdrawTab == "lido" ? '#fff' : '#000',
-                                    }}>{"Use Lido"}</div>
+                                    }}>{"Use STAQ"}</div>
                                 <div className={styles.tab}
                                     onClick={() => {
                                         setWithdrawTab("aggregators")

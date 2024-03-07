@@ -29,7 +29,7 @@ const Header = () => {
             src="/images/logo.png"
             alt="map" />
         </div>
-        {/* <div className={styles.line}></div>
+        <div className={styles.line}></div>
         <div className={styles.item} onClick={() => {
           router.push('/stake')
         }}>
@@ -49,7 +49,7 @@ const Header = () => {
             src="/icons/withdraw.svg"
             alt="map" />
           {'Withdraw'}
-        </div> */}
+        </div>
 
       </div>
       <div className={styles.headerRight}>
