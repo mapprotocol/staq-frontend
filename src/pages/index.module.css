@@ -72,9 +72,9 @@
     border-radius: 4px;
     color: #FFF;
     text-align: center;
-    font-size: 14px;
+    font-size: 16px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 600;
     line-height: normal;
     padding: 12px 24px;
     background: #3F6DFF;
@@ -339,6 +339,7 @@
     display: flex;
 }
 
+
 .footerItemTitle {
     color: #000;
     font-size: 16px;
@@ -366,7 +367,7 @@
     margin-top: 12px;
     color: #000;
     cursor: pointer;
-display: flex;
+    display: flex;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -390,5 +391,69 @@ display: flex;
         padding-left: 24px;
         padding-right: 24px;
 
+    }
+}
+
+@media (max-width: 800px) {
+    .body {
+        padding-left: 24px;
+        padding-right: 24px;
+
+    }
+    .steps{
+        flex-direction: column;
+
+    }
+    .bodyItem{
+        flex-direction: column;
+
+    }
+    .user{
+        height: auto;
+        padding: 0 24px 48px 24px;
+    }
+    .defi{
+        height: auto;
+        padding: 48px 24px 48px 24px;
+    }
+    .footer{
+        flex-direction: column;
+        padding: 0 24px 48px 24px;
+        gap: 36px;
+    }
+    .cards{
+        flex-direction: column;
+    }
+    .footerRight{
+        flex-direction: column;
+    }
+    .footerButton{
+        display: none;
+    }
+    .auditRight{
+        display: none;
+    }
+    .bodyItem{
+        height: auto;
+        padding: 48px 24px 48px 24px;
+        gap: 24px;
+
+    }
+    .audit{
+        height: auto;
+        padding: 0 24px 48px 24px;  
+    }
+    .left{
+        width: 100%;
+    }
+    .title{
+        top: 24px;
+        left: 24px;
+        font-size: 24px;
+        width: 50%;
+    }
+    .enterButton{
+        top: 182px;
+        left: 24px;
     }
 }

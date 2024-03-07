@@ -67,11 +67,12 @@
 
 .chainName {
     color: #000;
-    font-size: 16px;
+    font-size: 14px;
     display: flex;
+    margin-bottom: 2px;
     align-items: center;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 500;
     line-height: normal;
 
 }
@@ -94,7 +95,11 @@
 
 }
 
+.icon{
 
+    margin-left: 12px;
+    cursor: pointer;
+}
 @media (max-width: 1288px) {
     .header {
         padding-left: 24px;

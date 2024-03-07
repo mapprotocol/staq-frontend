@@ -37,7 +37,7 @@ const Home: NextPage = () => {
         <div onClick={() => {
           router.push('/stake')
         }} className={styles.enterButton}>
-          {"Staking Now"}
+          {"Stake Now"}
         </div>
 
         {/* <div className={styles.datas}>
@@ -352,7 +352,7 @@ const Home: NextPage = () => {
               router.push('/stake')
 
             }} >
-            {"dApp"}
+            {"DApp"}
           </div>
         </div>
       </div>

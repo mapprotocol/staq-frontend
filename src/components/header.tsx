@@ -53,7 +53,7 @@ const Header = () => {
 
       </div>
       <div className={styles.headerRight}>
-       {(router.route !== "/" && isConnected) && <div onClick={() => {
+        {(router.route !== "/" && isConnected) ? <div onClick={() => {
           setShowSelect(!showSelect)
         }} className={styles.selectNetwork}>
           <div className={styles.chainLogo}>
@@ -61,8 +61,8 @@ const Header = () => {
               style={{
                 cursor: 'pointer'
               }}
-              height={30}
-              width={30}
+              height={24}
+              width={24}
               src="/images/chain0.png"
               alt="map" /></div>
           <div className={styles.chainName}>
@@ -76,6 +76,24 @@ const Header = () => {
               src={`/images/${showSelect ? "up" : "down"}.svg`}
               alt="map" />
           </div>
+        </div> : <div> <Image
+        className={styles.icon}
+          height={32}
+          width={32}
+          onClick={() => {
+            window.open("https://docs.bitstaq.io/introduction/what-is-staq")
+          }}
+          src={`/icons/github.svg`}
+          alt="map" />
+           <Image
+            className={styles.icon}
+            height={32}
+            onClick={() => {
+              window.open("https://twitter.com/Bitstaq_io")
+          }}
+            width={32}
+            src={`/icons/x.svg`}
+            alt="map" />
         </div>}
 
         {showSelect && <div className={styles.networks}>
