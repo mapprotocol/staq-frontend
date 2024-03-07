@@ -101,4 +101,14 @@
         padding-right: 24px;
 
     }
+   
+}
+
+@media (max-width: 800px) {
+   .headerRight{
+    height: 0;
+    width: 0;
+    display: none;
+   }
+   
 }

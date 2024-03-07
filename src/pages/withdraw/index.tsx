@@ -546,7 +546,7 @@ const Home: NextPage = () => {
 
                             <div className={styles.stakeInfo}>
                                 <div className={styles.infoItem}>
-                                    <div className={styles.infoTitle}>{"Exchangerate"}</div>
+                                    <div className={styles.infoTitle}>{"Exchange rate"}</div>
                                     <div className={styles.infoValue}>{"1 stMAPO = " + (1 / rate).toFixed(6) + " MAPO"}</div>
                                 </div>
                             </div>

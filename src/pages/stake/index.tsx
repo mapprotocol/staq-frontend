@@ -308,7 +308,7 @@ const Home: NextPage = () => {
                                 <div className={styles.infoValue}>{(rate * Number(inputValue)).toFixed(6) + " stMAPO"}</div>
                             </div>
                             <div className={styles.infoItem}>
-                                <div className={styles.infoTitle}>{"Exchangerate"}</div>
+                                <div className={styles.infoTitle}>{"Exchange rate"}</div>
                                 <div className={styles.infoValue}>{"1 MAPO = " + rate.toFixed(6) + " stMAPO"}</div>
                             </div>
                         </div>
