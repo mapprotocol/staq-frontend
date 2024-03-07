@@ -447,13 +447,19 @@
         width: 100%;
     }
     .title{
-        top: 24px;
-        left: 24px;
+        top: 320px;
+        left: 36px;
+        right: 36px;
         font-size: 24px;
-        width: 50%;
     }
     .enterButton{
-        top: 182px;
-        left: 24px;
+        top: 426px;
+        display: flex;
+        left: calc(50vw - 68px);
+    }
+    .bg{
+
+        height: calc(100vw* 1.73);
+
     }
 }

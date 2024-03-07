@@ -13,9 +13,11 @@ import { useRouter } from 'next/router';
 
 const Home: NextPage = () => {
   const router = useRouter()
-
+  const [mobile, setMoblie] = useState(false)
   useEffect(() => {
-
+    if (window.matchMedia("(min-width: 880px)").matches) {
+      setMoblie(true)
+    }
   }, [])
 
 
@@ -26,10 +28,9 @@ const Home: NextPage = () => {
           fill
           style={{
             objectFit: "contain",
-            zIndex: 1,
-            position: 'absolute'
+            position:"absolute"
           }}
-          src="/images/home.png"
+          src={"/images/" + (mobile ? "" : "mobile-") + "home.png"}
           alt="map" />
         <div className={styles.title}>
           {"Liquidity for Staked Tokens in Bitcoin Layer2s Ecosystem"}
@@ -125,13 +126,13 @@ const Home: NextPage = () => {
           <div className={styles.step}>
             <div className={styles.stepImage}>
               <Image
-              fill
-              style={{
-                objectFit: "contain",
-              }}
-              src="/images/step1.png"
-              alt="map" />
-              </div>
+                fill
+                style={{
+                  objectFit: "contain",
+                }}
+                src="/images/step1.png"
+                alt="map" />
+            </div>
             <div className={styles.stepTitle}>{"STEP 1"}</div>
             <div className={styles.stepDesc}>{"Delegate tokens for staking in StaQ's Bitcoin L2 mainnet nodes."}</div>
 
@@ -342,7 +343,7 @@ const Home: NextPage = () => {
 
               window.open("https://twitter.com/Bitstaq_io")
 
-          }}>{"Twitter"}</div>
+            }}>{"Twitter"}</div>
             {/* <div className={styles.footerItemDesc}>{"Discord"}</div> */}
 
           </div>
