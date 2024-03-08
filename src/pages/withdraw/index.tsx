@@ -17,6 +17,7 @@ import { abbreviateMiddle, zeroAddress } from '../../utils/string';
 import { ELECTIONS_ADDRESS, contract_address, validator_ADDRESS } from '../../constract/address';
 import axios from 'axios';
 import { useRouter } from 'next/router';
+import { LoadingOutlined } from '@ant-design/icons';
 
 
 
@@ -182,6 +183,8 @@ const Home: NextPage = () => {
 
     }
     const claimFunc = async () => {
+        if (loading)
+            return
         if (address && isConnected) {
             try {
                 setLoading(true)
@@ -219,6 +222,8 @@ const Home: NextPage = () => {
     }
 
     const withdrawFunc = async () => {
+        if (loading)
+            return
         if (inputValue == "")
             return
         let validators = await readContract({
@@ -417,7 +422,7 @@ const Home: NextPage = () => {
                                             }
                                             return (
                                                 <div className={styles.connectButton} onClick={claimFunc}>
-                                                    {"Claim"}
+                                                    {loading ? <LoadingOutlined /> : "Claim"}
                                                 </div>
                                             );
                                         })()}
@@ -533,7 +538,7 @@ const Home: NextPage = () => {
                                                 }
                                                 return (
                                                     <div className={styles.connectButton} onClick={withdrawFunc}>
-                                                        {"Request Withdrawal"}
+                                                        {loading ? <LoadingOutlined /> : "Request Withdrawal"}
                                                     </div>
                                                 );
                                             })()}

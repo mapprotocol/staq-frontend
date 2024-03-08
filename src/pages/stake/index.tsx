@@ -16,6 +16,7 @@ import Image from 'next/image'
 import { abbreviateMiddle } from '../../utils/string';
 import { contract_address } from '../../constract/address';
 import axios from 'axios';
+import { LoadingOutlined } from '@ant-design/icons';
 
 const initData = {
     claimAble: "0",
@@ -105,6 +106,8 @@ const Home: NextPage = () => {
 
 
     const stakeFunc = async () => {
+        if (loading)
+            return
         if (Number(inputValue) < 10) {
             messageApi.open({
                 type: 'error',
@@ -140,7 +143,6 @@ const Home: NextPage = () => {
                         //@ts-ignore
                         content: "Stake success",
                     });
-                // loadData()
                 setLoading(false)
 
             } catch (err) {
@@ -293,7 +295,7 @@ const Home: NextPage = () => {
 
                                             return (
                                                 <div className={styles.connectButton} onClick={stakeFunc}>
-                                                    {"Stake"}
+                                                    {loading ? <LoadingOutlined /> : "Stake"}
                                                 </div>
                                             );
                                         })()}
