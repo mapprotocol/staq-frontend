@@ -13,10 +13,13 @@ import { useRouter } from 'next/router';
 
 const Home: NextPage = () => {
   const router = useRouter()
-  const [mobile, setMoblie] = useState(false)
+  const [mobile, setMoblie] = useState(true)
   useEffect(() => {
     if (window.matchMedia("(min-width: 880px)").matches) {
       setMoblie(true)
+    }else{
+      setMoblie(false)
+
     }
   }, [])
 
