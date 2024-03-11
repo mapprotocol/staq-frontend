@@ -174,6 +174,9 @@ const Home: NextPage = () => {
 
     return (
         <>
+            <title>{"STAQ"}</title>
+            <meta name="description" content={"Liquidity for Staked Tokens in Bitcoin Layer2s Ecosystem."} />
+            <link rel="icon" href="/images/logo1.png" />
             {contextHolder}
             <div className={styles.body}>
                 {/* <div className={styles.total}>

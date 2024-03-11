@@ -89,7 +89,7 @@ const Header = () => {
             className={styles.icon}
             height={32}
             onClick={() => {
-              window.open("https://twitter.com/Bitstaq_io")
+              window.open("https://twitter.com/StaQ_io")
           }}
             width={32}
             src={`/icons/x.svg`}

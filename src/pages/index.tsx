@@ -17,7 +17,7 @@ const Home: NextPage = () => {
   useEffect(() => {
     if (window.matchMedia("(min-width: 880px)").matches) {
       setMoblie(true)
-    }else{
+    } else {
       setMoblie(false)
 
     }
@@ -26,12 +26,15 @@ const Home: NextPage = () => {
 
   return (
     <>
+      <title>{"STAQ"}</title>
+      <meta name="description" content={"Liquidity for Staked Tokens in Bitcoin Layer2s Ecosystem."} />
+      <link rel="icon" href="/images/logo1.png" />
       <div className={styles.bg}>
         <Image
           fill
           style={{
             objectFit: "contain",
-            position:"absolute"
+            position: "absolute"
           }}
           src={"/images/" + (mobile ? "" : "mobile-") + "home.png"}
           alt="map" />
@@ -344,7 +347,7 @@ const Home: NextPage = () => {
             {/* <div className={styles.footerItemDesc}>{"Telegram"}</div> */}
             <div className={styles.footerItemDesc} onClick={() => {
 
-              window.open("https://twitter.com/Bitstaq_io")
+              window.open("https://twitter.com/StaQ_io")
 
             }}>{"Twitter"}</div>
             {/* <div className={styles.footerItemDesc}>{"Discord"}</div> */}
