@@ -226,13 +226,13 @@ const Home: NextPage = () => {
             return
         if (inputValue == "")
             return
-       
-        let validators = await readContract({
+        let res = await readContract({
             abi: election_abi,
             address: ELECTIONS_ADDRESS,
-            functionName: 'getTopValidators',
-            args: [BigInt(60)]
+            functionName: 'getTotalVotesForEligibleValidators',
         })
+        let validators = res[0]
+        
         let lesser: `0x${string}` = zeroAddress()
         let greater: `0x${string}` = zeroAddress()
 
@@ -469,9 +469,9 @@ const Home: NextPage = () => {
                                     <Image
                                         height={24}
                                         width={24}
-                                        src="/images/map.png"
+                                        src="/images/stMapo.png"
                                         alt="map" />
-                                    <input value={inputValue} onChange={handleInputChange} type="text" className={styles.input} placeholder={"MAPO Amount"} />
+                                    <input value={inputValue} onChange={handleInputChange} type="text" className={styles.input} placeholder={"stMAPO Amount"} />
                                 </div>
                                 <div onClick={
                                     setMaxValue} className={styles.max}>{"MAX"}</div>
