@@ -151,7 +151,7 @@ const Home: NextPage = () => {
                 messageApi.open({
                     type: 'error',
                     //@ts-ignore
-                    content: err?.details || "Stake error",
+                    content: <div className={styles.error}>{err?.message || "unLock error"}</div>,
                 });
                 console.log(err)
             }

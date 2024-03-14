@@ -310,6 +310,14 @@
 
 }
 
+.error {
+    max-width: 80vw;
+    text-align: left;
+    white-space : pre;
+    text-wrap: wrap;
+    word-wrap: break-word;
+}
+
 .collapseHeader {
     display: flex;
     width: 100%;
@@ -395,13 +403,14 @@
     cursor: pointer;
 }
 
-.aggregatorInfo{
+.aggregatorInfo {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-top: 12px;
     font-size: 12px;
 }
+
 @media (max-width: 1288px) {
     .body {
         padding-left: 24px;

@@ -213,7 +213,7 @@ const Home: NextPage = () => {
                 messageApi.open({
                     type: 'error',
                     //@ts-ignore
-                    content: err?.details || "claim error",
+                    content: <div className={styles.error}>{err?.message || "unLock error"}</div>,
                 });
                 console.log(err)
             }
@@ -226,14 +226,16 @@ const Home: NextPage = () => {
             return
         if (inputValue == "")
             return
+       
         let validators = await readContract({
             abi: election_abi,
             address: ELECTIONS_ADDRESS,
             functionName: 'getTopValidators',
-            args: [BigInt(20)]
+            args: [BigInt(60)]
         })
         let lesser: `0x${string}` = zeroAddress()
         let greater: `0x${string}` = zeroAddress()
+
         validators.forEach((item, index) => {
             if (item == validator_ADDRESS) {
                 if (index == 0) {
@@ -275,8 +277,9 @@ const Home: NextPage = () => {
                         //@ts-ignore
                         content: "unLock success",
                     });
-                getData()
+                await getData()
                 setLoading(false)
+
 
             } catch (err) {
                 setLoading(false)
@@ -284,9 +287,8 @@ const Home: NextPage = () => {
                 messageApi.open({
                     type: 'error',
                     //@ts-ignore
-                    content: err?.details || "unLock error",
+                    content: <div className={styles.error}>{err?.message || "unLock error"}</div>,
                 });
-                console.log(err)
             }
         }
 

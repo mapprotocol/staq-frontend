@@ -40,7 +40,13 @@
     gap: 8px;
 
 }
-
+.error {
+    max-width: 80vw;
+    text-align: left;
+    white-space : pre;
+    text-wrap: wrap;
+    word-wrap: break-word;
+}
 .cardTitle {
     color: #7A8AA0;
     font-size: 12px;
