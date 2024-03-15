@@ -56,12 +56,13 @@ const Header = () => {
         {(router.route !== "/" && isConnected) ? <div style={{ display: 'flex', gap: "16px", alignItems: 'center' }}>
           <Image
             className={styles.icon}
-            height={36}
+            height={30}
+            width={24}
             onClick={() => {
               window.open("https://docs.bitstaq.io/user-guide/stake")
             }}
-            width={36}
-            src={`/icons/document.png`}
+
+            src={`/icons/document1.png`}
             alt="map" />
           <div onClick={() => {
             setShowSelect(!showSelect)
@@ -87,14 +88,14 @@ const Header = () => {
                 alt="map" />
             </div>
 
-          </div> </div > : <div> <Image
+          </div> </div > : <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}> <Image
             className={styles.icon}
-            height={32}
-            width={32}
+            height={30}
+            width={24}
             onClick={() => {
               window.open("https://docs.bitstaq.io/introduction/what-is-staq")
             }}
-            src={`/icons/github.svg`}
+            src={`/icons/document1.png`}
             alt="map" />
           <Image
             className={styles.icon}
