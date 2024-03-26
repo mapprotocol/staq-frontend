@@ -573,7 +573,7 @@ const Home: NextPage = () => {
                                         {"Hiveswap"}
                                         <div
                                             onClick={() => {
-                                                window.open('https://app.hiveswap.io/swap')
+                                                window.open('https://pro.hiveswap.io/trade/swap?tokenFrom=0x13cb04d4a5dfb6398fc5ab005a6c84337256ee23&tokenTo=0x9bd1e0a3a727d0d4f4e9a6d59022e071ddc79924&chainId=22776')
                                             }}
                                             className={styles.goto}>
                                             {"Go to Hiveswap"}
