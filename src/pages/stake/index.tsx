@@ -9,14 +9,15 @@ import { abi } from '../../../abi/abi';
 import { wagmiConfig } from '../_app';
 import { Button, Descriptions, DescriptionsProps, message } from 'antd';
 import styles from './index.module.css'
-import { ethers } from "ethers";
+import { BigNumberish, ethers } from "ethers";
 import moment from 'moment';
 import { parseEther, parseGwei } from 'viem';
 import Image from 'next/image'
 import { abbreviateMiddle } from '../../utils/string';
-import { contract_address } from '../../constract/address';
+import { LOCKED_GOLDADDRESS, contract_address } from '../../constract/address';
 import axios from 'axios';
 import { LoadingOutlined } from '@ant-design/icons';
+import { lock_gold_abi } from '../../../abi/ILockedGold';
 
 const initData = {
     claimAble: "0",
@@ -59,6 +60,8 @@ const Home: NextPage = () => {
     const [inputValue, setInputValue] = useState("")
     const [rate, setRate] = useState(1)
     const [stMAPO, setStMAPO] = useState("0")
+    const [totalStake, setTotalStake] = useState("0")
+
     const [apr, setApr] = useState(0)
     const result = useBalance({ address })
     useEffect(() => {
@@ -83,9 +86,16 @@ const Home: NextPage = () => {
                 args: [parseEther('1')],
                 // gas:parseGwei("")
             })
-            console.log(rate, 11111)
 
             setRate(Number(ethers.utils.formatUnits(rate, 18)))
+
+            let _totalStake = await readContract({
+                abi: lock_gold_abi,
+                address: LOCKED_GOLDADDRESS,
+                functionName: 'getAccountTotalLockedGold',
+                args: ["0x9bD1E0a3A727D0d4F4e9A6d59022E071DDc79924"]
+            })
+            setTotalStake(Number(ethers.utils.formatUnits(_totalStake as BigNumberish, 18)).toLocaleString())
         }
 
         const url = "https://staq-backend.chainservice.io/queryPrice";
@@ -174,7 +184,7 @@ const Home: NextPage = () => {
 
     return (
         <>
-          
+
             {contextHolder}
             <div className={styles.body}>
                 {/* <div className={styles.total}>
@@ -305,6 +315,10 @@ const Home: NextPage = () => {
                             }}
                         </ConnectButton.Custom>
                         <div className={styles.stakeInfo}>
+                            <div className={styles.infoItem}>
+                                <div className={styles.infoTitle}>{"Total staked with STAQ"}</div>
+                                <div className={styles.infoValue}>{totalStake + " MAPO"}</div>
+                            </div>
                             <div className={styles.infoItem}>
                                 <div className={styles.infoTitle}>{"You will receive"}</div>
                                 <div className={styles.infoValue}>{(rate * Number(inputValue)).toFixed(6) + " stMAPO"}</div>
