@@ -103,8 +103,8 @@ const Home: NextPage = () => {
 
         axios.get(url)
             .then(response => {
-                const x = 31104000000 / (new Date(response.data.data.list[0].createdAt).getTime() - new Date(response.data.data.list[1].createdAt).getTime())
-                setApr(Number((response.data.data.list[0].price - response.data.data.list[1].price) / response.data.data.list[1].price * x))
+                const date = 31536000000 / (new Date(response.data.data.list[0].createdAt).getTime() - new Date(response.data.data.list[1].createdAt).getTime())
+                setApr(Number((response.data.data.list[0].price - response.data.data.list[1].price) / response.data.data.list[1].price * date))
                 // .setState({
                 //   data: response.data,
                 // });
