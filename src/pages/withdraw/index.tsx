@@ -580,7 +580,6 @@ const Home: NextPage = () => {
                                             <Image
                                                 width={12}
                                                 height={12}
-
                                                 src="/icons/go.svg"
                                                 alt="map" />
                                         </div>
